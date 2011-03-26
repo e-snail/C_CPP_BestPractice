@@ -1,0 +1,12 @@
+./stringRelated/main.cpp~
+./stringRelated/stringFunction/main.cpp~
+./sorting/main.cpp~
+./.git/COMMIT_EDITMSG~
+./data-structure/main.cpp~
+./static-const/main.c~
+./clanguage/main.c~
+./metaobject/mywidget.cpp~
+./struct-union-sizeof/main.c~
+./externC/2/main.c~
+./externC/2/cppheader.h~
+./externC/2/README~

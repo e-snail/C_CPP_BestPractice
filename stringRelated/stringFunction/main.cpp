@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+//要求dest有足够的空间来存放src
 char *strcat(char *dest, char *src)
 {
 	char *p = dest;

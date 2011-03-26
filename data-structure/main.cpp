@@ -4,6 +4,9 @@
 
 using namespace std;
 
+/******************************************************
+ * 二叉树算法 http://lijinshui.bokee.com/6649878.html
+******************************************************/
 //Binary tree structure
 typedef BiTree {
 	int data;
@@ -12,6 +15,7 @@ typedef BiTree {
 }BiTree;
 
 //Binary Tree deepth
+//二叉树深度 递归算法
 int BinaryTreeDeepth(BTLink *link)
 {
 	int deepthL = 0, deepthR = 0;
@@ -27,6 +31,20 @@ int BinaryTreeDeepth(BTLink *link)
 	}
 }
 
+//判断某二叉树是否为平衡二叉树
+bool isBalance(BTLink *link)
+{
+	if (!link)
+		return true;
+	int ret = BinaryTreeDeepth(link->ltree) - BinaryTreeDeepth(link->rtree);
+	if ((ret > 1) || (ret < -1))
+		return false;
+	else return isBalance(link->ltree) && isBalance(link->rtree);
+}
+
+/******************************************************
+ * 单向链表的倒置
+******************************************************/
 //Single linkage structure
 typedef SingleLinckage {
 	int data;
