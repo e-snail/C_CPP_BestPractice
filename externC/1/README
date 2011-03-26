@@ -1,0 +1,13 @@
+1, add #ifdef __cplusplus xxxx  part in cheader.h
+2, gcc -c cheader.c
+3, add #include cheader.h in main.cpp
+4, g++ -c main.cpp
+5, g++ -o main main.o cheader.o
+
+or 
+
+1, normal cheader.h
+2, gcc -c cheader.c
+3, add " extern "C" xxx " part in main.cpp
+4, g++ -c main.cpp
+5, g++ -o main main.o cheader.o

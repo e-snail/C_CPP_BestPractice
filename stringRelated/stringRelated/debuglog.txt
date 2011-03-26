@@ -1,0 +1,24 @@
+Debug: size of char  1 
+Debug: This is a debug message at thisisqt.com
+Warning: This is a warning message  at thisisqt.com
+Critical: This is a critical message  at thisisqt.com
+Debug: size of char  1 
+Debug: This is a debug message at thisisqt.com
+Warning: This is a warning message  at thisisqt.com
+Critical: This is a critical message  at thisisqt.com
+Debug: size of char  1 
+Debug: This is a debug message at thisisqt.com
+Warning: This is a warning message  at thisisqt.com
+Critical: This is a critical message  at thisisqt.com
+Debug: size of char  1 
+Debug: This is a debug message at thisisqt.com
+Warning: This is a warning message  at thisisqt.com
+Critical: This is a critical message  at thisisqt.com
+Debug: size of char  1 
+Debug: This is a debug message at thisisqt.com
+Warning: This is a warning message  at thisisqt.com
+Critical: This is a critical message  at thisisqt.com
+Debug: size of char  1 
+Debug: This is a debug message at thisisqt.com
+Warning: This is a warning message  at thisisqt.com
+Critical: This is a critical message  at thisisqt.com

@@ -1,0 +1,7 @@
+1, add "extern "C"" in cppheader.h
+
+2, add extern void foo(); in main.c
+
+3, use g++ -o main main.o cppheader.o
+
+http://www.360doc.com/content/10/0907/15/169163_51869285.shtml
