@@ -22,8 +22,10 @@ class String{
 
 String::String(const char* str=NULL)
 {
-	if (!str)
-		m_data = NULL;
+	if (!str) {
+		m_data = new char[1];
+		m_data[0] = '\0';
+	}
 	else {
 		m_data = new char[strlen(str) + 1];
 		strcpy(m_data, str);
