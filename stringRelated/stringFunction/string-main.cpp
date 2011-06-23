@@ -42,7 +42,7 @@ String::String(const String &other)
 	};                 
 }
 
-String String::String& operator=(const String&other)
+String& String::operator=(const String&other)
 {
 	if (*this != other) {
 		delete[] m_data;
@@ -62,11 +62,13 @@ String String::String& operator=(const String&other)
 String String::operator+(const String &other) const
 {
 	String newString;
-	if (!other.m_data)
+	if (!other.m_data) {
 		newString = *this;
+	}
 	else
-		if (!m_data)
+		if (!m_data) {
 			newString = other;
+		}
 		else {
 			newString.m_data = new char[strlen(m_data) + strlen(other.mdata) + 1];
 			strcpy(newString.m_data, m_data);
