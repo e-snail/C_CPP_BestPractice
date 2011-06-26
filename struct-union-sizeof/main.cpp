@@ -31,6 +31,12 @@ union
 	char b[2];
 }B;
 
+typedef struct s2 {
+	short a;
+	char b;
+	int c;
+};
+
 class ClassA{ //对于ClassA的对象，总不能没有空间把 所以是1
 };
 
@@ -61,6 +67,7 @@ int main(int argc, char **argv)
 
 	printf("%d\n", sizeof(s1)); //16
 	printf("%d\n", sizeof(A)); //20
+	printf("s2 %d\n", sizeof(s2)); //16
 
 	B.b[0] = 10;
 	B.b[1] = 1;
