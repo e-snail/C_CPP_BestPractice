@@ -37,6 +37,11 @@ typedef struct s2 {
 	int c;
 };
 
+typedef struct s3 {
+	int n : 16;
+	int m : 16;
+};
+
 class ClassA{ //对于ClassA的对象，总不能没有空间把 所以是1
 };
 
@@ -68,6 +73,7 @@ int main(int argc, char **argv)
 	printf("%d\n", sizeof(s1)); //16
 	printf("%d\n", sizeof(A)); //20
 	printf("s2 %d\n", sizeof(s2)); //16
+	printf("s3 %d\n", sizeof(s3)); //16
 
 	B.b[0] = 10;
 	B.b[1] = 1;
