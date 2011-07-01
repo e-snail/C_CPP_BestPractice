@@ -30,8 +30,10 @@ struct C4: public Base {};
 
 struct Derived : public C1, public C2, public C3, public C4 {};
 	
+
 int main( int argc, char **argv)
 {
 	Derived d;
+
 	return 0;
 }

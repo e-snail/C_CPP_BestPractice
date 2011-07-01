@@ -1,6 +1,10 @@
 #include <iostream>
 #include <stdlib.h>
 
+//--------------------------------------------------------------
+//Test Code 1: 虚继承用在创建不可被继承的类的例子 
+//--------------------------------------------------------------
+
 //http://www.cppblog.com/sunus/archive/2007/01/11/17532.html
 //
 
@@ -21,12 +25,47 @@ public:
 	A(int n) {};
 };
 
-class B: public A {
+class B: public A { //Point is that Lock作为虚基类；在继承体系中B是最远派生类，初始化时候要负责调用Lock的初始化函数，但是Lock::Lock()是private，所以无法被调用
 public:
-	B() {};
+	B() {};  
 };
+
+//--------------------------------------------------------------
+//Test Code 2: 虚继承的例子 
+//--------------------------------------------------------------
+//-----------------------------------
+//test code 2
+//-----------------------------------
+class Car {
+public:
+	Car(): price(2000) {}
+	//Car(int): price(5000) {}
+	Car(double b):price(b*1.1) {};
+	double price;
+};
+
+class Toyota: public virtual Car {
+public:
+	Toyota() { cout <<"Toyota::Toyota "<<endl; };
+	Toyota(double b): Car(b){};
+	Toyota(int b): Car(b){};
+};
+
+class Prius: public Toyota {
+public:
+	Prius(double b):Toyota(b) {};
+	Prius(int b):Toyota(b) {};
+};
+
 
 int main(int argc, char **argv)
 {
+	//-----------------------------------
+	//test code 2
+	//Point:  output is "2000" 因为Prius调用了Car的默认构造函数
+	//-----------------------------------
+	Prius p(3000);
+	cout <<p.price <<endl;
+
 	return 0;
 }

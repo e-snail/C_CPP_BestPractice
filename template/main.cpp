@@ -55,7 +55,7 @@ public:
 	int B(int t) { cout <<"FOO::B(int t)" <<endl; };
 	int B(int t) const { cout <<"FOO::B(int t) const" <<endl; };
 };
-template <> class FOO<bool> {
+template <> class FOO<bool> {   //template <> 是模板特化
 public:
 	int B(int t) { cout <<"FOO<bool>::B(int t)" <<endl; };
 	int B(int t) const { cout <<"FOO<bool>::B(int t) const" <<endl; };
@@ -77,6 +77,8 @@ int main(int argc, char **argv)
 
 //--------------------------------------//
 // From SMTH
+//关于模板特化  http://hi.baidu.com/bingbingzhe/blog/item/6956dec4777b7baa8226acf6.html
+//const 对象调用const 成员函数
 //--------------------------------------//
 	FOO<bool> f;
 	const FOO<bool>g = f;
