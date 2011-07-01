@@ -12,6 +12,12 @@ using namespace std;
 struct Base {
 	Base() { cout<<"struct Base::Base() " <<endl; }
 	unsigned int color;
+	
+	Base operator += (const Base &a) {
+		Base b;
+		b.color = this->color + a.color;
+		return b;
+	}
 };
 
 //---------------------------------------------------------------
