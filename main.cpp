@@ -1,6 +1,7 @@
 #include <iostream>
-#include <string>
+#include <string.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 using namespace std;
 
@@ -10,6 +11,11 @@ class Base
 		virtual void print() {cout <<"Base::print" <<endl;};
 
 	static void func() {};
+	void testFunc() const {};
+
+	int modify() const { x = 10;  return x; }
+private:
+	int x;
 };
 
 class Drived : public Base 
@@ -56,6 +62,31 @@ class OtherBase {
 	OtherBase() { cout <<"OtherBase Initialization" <<endl; };
 };
 OtherBase b;
+
+void AllocMemory(char **p, int num)
+{
+	*p = (char *) malloc(num);
+}
+
+void test1(int a, int b=1, int c=0)
+{}
+
+class Test 
+{
+	int x;
+public:
+	Test() {x=0;}
+	void mod() {
+		x=10;
+		printf("Test x = \n");
+		delete this;
+		printf("Test END x=%d\n", x);
+	}
+	static void func1() { y++; };
+	void func() { func1(); cout <<"xxxxx " <<y <<endl; };
+	static int y;
+};
+int Test::y = 1;
 
 int main( int argc, char **argv)
 {
@@ -122,6 +153,45 @@ int main( int argc, char **argv)
 
 	int a[2][2] = {{1},{2,3}};
 	cout <<a[0][1] <<endl;
+
+	char *straaa = NULL;
+	AllocMemory(&straaa, 100);
+	strcpy(straaa, "hello");
+
+	printf("\n str is %s\n", straaa);
+	free (straaa);
+
+	char *nnn = new char[100];
+	strcpy(nnn, "11111");
+	delete []nnn;
+
+	//test1();
+	test1(0);
+	test1(0, 0);
+	test1(0, 0, 0);
+
+	Test *t = new Test();
+	t->mod();
+	t->func();
+
+	cout <<"---------------------------" <<endl;
+	char abcd[] = "String";
+	char *pA = "New String";
+	char *temp;
+	temp = abcd;
+	printf("address of char[] abcd %p\n", abcd);
+	int abcdef = 0;
+	printf("address of int abcdef %p\n", &abcdef);
+	//abcd = (char *)malloc(strlen(pA) + 1);
+	//strcpy(abcd, pA);	
+	pA = (char *)malloc(strlen(temp) + 1);
+	strcpy(pA, temp);
+	printf("(%s, %s)\n", abcd, pA);
+//	free(pA);
+//	free(abcd);
+
+	int *p = 0;
+	delete p;
 
 	return 0;
 }

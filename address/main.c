@@ -24,7 +24,8 @@ int main(int argc, char **argv)
 
 	char *p10 = "abc";
 	const char *p20 = "abc";
-	printf("p10 add: %p\np20 add: %p\n compare %d\n", p10, p20, p10==p20);
+	printf("********** p10 add: %p\np20 add: %p\n compare %d\n", p10, p20, p10==p20);
+	printf("********** %d\n", &p10 == &p20); 
 
 	char *p11 = "abc";
 	char p21[] = {'a', 'b', 'c'};

@@ -1,11 +1,11 @@
-//#include <string.h>
-//#include <stdlib.h>
-//#include <iostream>
-
-//using namespace std;
-
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <iostream>
+
+using namespace std;
+
 
 typedef struct   s1   
 {   
@@ -79,6 +79,13 @@ int main(int argc, char **argv)
 	B.b[1] = 1;
 	printf("%d\n", B.a);
 
+	char array[] = "ABC";
+	char array2[] = "B\0A";
+	printf("******* %s %d\n", array, sizeof(array));
+	printf("******* %s %d\n", array2, sizeof(array2));
+	printf("******* %s %d\n", array2, strlen(array2));
+	strcpy(array, array2);
+	printf("******* %s %d\n", array, sizeof(array));
 
 	return 0;
 }

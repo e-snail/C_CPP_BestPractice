@@ -39,10 +39,33 @@ void QuickSorting(int array[], int low, int high)
 	}
 }
 
+//快速排序 2
+void quickSort2(int v[], int left, int right)
+{
+	int j, last;
+	if (left >= right) {
+		return;
+	}
+	last = left;
+	for (j=left+1; j<=right; j++) {
+		if(v[j] < v[last]) {
+			for (int i=j; i>last; i--) {
+				int tmp = v[i-1];
+				v[i-1] = v[i];
+				v[i] = tmp;
+			}
+		}
+		last=j;
+	}
+	quickSort2(v, left, last-1);
+	quickSort2(v, last+1, right);
+}
+
 int main(int argc, char **argv)
 {
 	int array[] = {10, 9, 78, 100, 30, 4, 58, 74, 74, 14};
-	QuickSorting(array, 0, 9);
+	//QuickSorting(array, 0, 9);
+	quickSort2(array, 0, 9);
 
 	for (int i=0; i<10; i++)
 		cout <<array[i] <<endl; 
