@@ -46,6 +46,21 @@ T Test<T>::operator+(T x) {
 	return (n+x);
 }
 
+//--------------------------------------//
+// From SMTH
+//--------------------------------------//
+template <typename T> class FOO {
+public:
+	int B(T t) { cout <<"FOO::B(T t)" <<endl; };
+	int B(int t) { cout <<"FOO::B(int t)" <<endl; };
+	int B(int t) const { cout <<"FOO::B(int t) const" <<endl; };
+};
+template <> class FOO<bool> {
+public:
+	int B(int t) { cout <<"FOO<bool>::B(int t)" <<endl; };
+	int B(int t) const { cout <<"FOO<bool>::B(int t) const" <<endl; };
+};
+
 int main(int argc, char **argv)
 {
 	cout<<"--------------- template function" <<endl;
@@ -59,6 +74,13 @@ int main(int argc, char **argv)
 
 	Test<char> tc('a');
 	tc.print();
+
+//--------------------------------------//
+// From SMTH
+//--------------------------------------//
+	FOO<bool> f;
+	const FOO<bool>g = f;
+	g.B(10);
 
 	return 0;
 }

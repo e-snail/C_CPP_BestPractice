@@ -13,7 +13,7 @@ class Base
 	static void func() {};
 	void testFunc() const {};
 
-	int modify() const { x = 10;  return x; }
+	//int modify() const { x = 10;  return x; }
 private:
 	int x;
 };
@@ -87,6 +87,18 @@ public:
 	static int y;
 };
 int Test::y = 1;
+
+//******
+//Point 1
+//******
+void Allocate(int *p)
+{
+	cout<<"p address " <<p <<" value = " <<*p <<endl;
+	p = new int;
+	cout<<"p address " <<p <<" value = " <<*p <<endl;
+	*p++ = 2;
+	cout<<"p address " <<p <<" value = " <<*p <<endl;
+}
 
 int main( int argc, char **argv)
 {
@@ -192,6 +204,13 @@ int main( int argc, char **argv)
 
 	int *p = 0;
 	delete p;
+
+//******
+//Point 1
+//******
+	int i = 1;
+	Allocate(&i);
+	cout<<"i address " <<&i <<" value = " <<i <<endl;
 
 	return 0;
 }
