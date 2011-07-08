@@ -25,6 +25,22 @@ int main( int argc, char **argv)
 	cout <<c1.m_lng <<endl;
 	cout <<c2->m_lng <<endl;
 
+	//***
+	int abc = 100;
+	int abcdef = 111;
+	const int ccc = 444;
+
+	//const int* pA = &ccc;
+	const int* pA = &abc;
+	int* const pAD = &abc;
+	//*pA = 111; //WRONG!
+	pA = &abcdef;
+
+	*pAD = 222;
+	//*pAD = &abcdef; //WRONG
+	
+	cout <<*pA <<endl;
+
 	return 0;
 }
 

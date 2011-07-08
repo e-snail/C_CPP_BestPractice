@@ -18,6 +18,24 @@ typedef struct   s1
 	struct s1 *p1;
 }s1;
 
+	union {
+		struct ST { 
+			char str[0];
+		}s0;
+		struct ST1 { 
+		}s1;
+	}s0;
+
+union V {
+	struct X {
+		unsigned char s1:2;
+		unsigned char s2:3;
+		unsigned char s3:3;
+	}x;
+	int c;
+	//unsigned char c;
+}v;
+
 union 
 {
 	int a[5];
@@ -82,10 +100,34 @@ int main(int argc, char **argv)
 	char array[] = "ABC";
 	char array2[] = "B\0A";
 	printf("******* %s %d\n", array, sizeof(array));
-	printf("******* %s %d\n", array2, sizeof(array2));
-	printf("******* %s %d\n", array2, strlen(array2));
+	printf("+++++++ %s %d\n", array2, sizeof(array2));
+	printf("+++++++  %s %d\n", array2, strlen(array2));
 	strcpy(array, array2);
-	printf("******* %s %d\n", array, sizeof(array));
+	int a[5];
+	int *p = a;
+	printf("******* %p : %p\n", &a, p);
+	printf("******* %d\n", a[3]);
+	for (int i=0; i <5; i++) {
+		*p = i+1;
+	}
+	printf("******* %d\n", sizeof(a));
+	printf("******* %d\n", a[3]);
+	printf("******* %p\n", a);
+	printf("******* %p\n", &a[0]);
+	printf("******* %p\n", &a[1]);
+
+	char aaaa[0];
+	printf("******* %d\n", sizeof(aaaa));
+
+	cout <<"-------- " <<sizeof(s0);
+	printf("%d\n", sizeof(s0));
+
+	char c = 'a';
+	typeof(c) cc = 45;
+	printf("%c\n", cc);
+
+	v.c = 100;
+	printf("%d %d %d\n", v.x.s1, v.x.s2, v.x.s3);
 
 	return 0;
 }

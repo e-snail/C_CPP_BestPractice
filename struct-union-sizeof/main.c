@@ -1,11 +1,18 @@
 #include <string.h>
+#include <stdio.h>
 
 int main()
 {
-   char str[]="ABC";
-   strcpy(str, "BBB");
-   char *s1 = "ABC";
-   s1[1] = 'D';
-	
-	char abc[] = "a\0b";
+	union {
+		struct ST { 
+			char str[0];
+		}s0;
+		struct ST1 { 
+			char str[0];
+		}s1;
+	}s;
+
+	printf("%d\n", sizeof(s));
+
+	return 0;
 }

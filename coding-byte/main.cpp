@@ -4,6 +4,16 @@
 
 using namespace std;
 
+int checkEndian ()
+{
+	union endian {
+		int a;
+		char c;
+	}c;
+	c.a = 256;
+	return (c.c == 0);
+}
+
 int main(int argc, char **argv)
 {
 	char p[] ={"中文123"};
@@ -19,6 +29,8 @@ int main(int argc, char **argv)
 		printf("Big endian\n");
 	else 
 		printf("Little endian\n");
+
+	printf("%d\n", checkEndian());
 
 	return 0;
 }
