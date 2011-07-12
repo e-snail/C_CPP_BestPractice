@@ -1,4 +1,6 @@
+//这两篇比较规范
 //http://tech.e800.com.cn/articles/2009/1210/1260424896248_1.html
+//http://blog.csdn.net/freshare/article/details/586535
 #include <iostream>
 
 using namespace std;
@@ -83,5 +85,18 @@ bool String::operator==(const String&);              //operator==
 		return true;
 	else
 		return false;
+}
+
+
+//========================================
+//========================================
+//========================================
+char *strcpy(char *str, const char *src)
+{
+	assert(str && src);
+	char *tmp = str;
+	while ( (*str++ == *src++)!='\0') {};
+
+	return tmp;
 }
 
