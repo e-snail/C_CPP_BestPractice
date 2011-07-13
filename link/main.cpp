@@ -71,6 +71,26 @@ sNode* reverseSNodes(sNode* head)
 		return head;
 }
 
+//我认为比较可靠的方法
+//也方便阅读
+sNode *head = NULL;
+void reverseNodesList(sNode *root)
+{
+	sNode *pre, *cur, *next;
+	pre = (sNode*)0;
+	cur = root;
+	next = cur->next;
+
+	while (next) {
+		cur->next = pre;
+		pre= cur;
+		cur = next;
+		next = cur->next;
+	}
+	cur->next = pre;
+	head = cur;
+}
+
 int main( int argc, char **argv)
 {
 

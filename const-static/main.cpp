@@ -16,6 +16,8 @@ int main( int argc, char **argv)
 	//free(p);  //space are allocate in stack, so free() is not neccesary
 
 	p = (int*)(&n);
+	const int b = 123;
+	const int * pp = &b;
 	*p = 333;
 	cout <<"n = " <<n <<endl;
 	cout <<"*p = " <<*p <<endl; //result same with upper one, compilor does not allocate space for p 
