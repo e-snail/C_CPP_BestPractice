@@ -29,5 +29,8 @@ int main()
 		strcpy(p, "zzzz");
 	printf("p is %s\n", p);
 
+	int array[] = {1, 2, 3};
+	printf("size is %d\n", sizeof(array)/sizeof(int));
+
 	return 0;
 }
