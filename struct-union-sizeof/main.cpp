@@ -95,7 +95,7 @@ int main(int argc, char **argv)
 
 	B.b[0] = 10;
 	B.b[1] = 1;
-	printf("%d\n", B.a);
+	printf("B.a %d\n", B.a);
 
 	char array[] = "ABC";
 	char array2[] = "B\0A";

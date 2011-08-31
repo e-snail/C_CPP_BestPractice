@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="normal.png">normal.png</file>
+        <file alias="pressed.png">pressed.png</file>
+    </qresource>
+</RCC>
