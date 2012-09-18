@@ -1,6 +1,8 @@
 #include <iostream>
 #include <stdlib.h>
 
+using namespace std;
+
 //--------------------------------------------------------------
 //Test Code 1: 虚继承用在创建不可被继承的类的例子 
 //--------------------------------------------------------------
@@ -38,7 +40,7 @@ public:
 //-----------------------------------
 class Car {
 public:
-	Car(): price(2000) {}
+	Car(): price(20000) {}
 	//Car(int): price(5000) {}
 	Car(double b):price(b*1.1) {};
 	double price;
@@ -46,15 +48,15 @@ public:
 
 class Toyota: public virtual Car {
 public:
-	Toyota() { cout <<"Toyota::Toyota "<<endl; };
+	//Toyota() { cout <<"Toyota::Toyota "<<endl; };
 	Toyota(double b): Car(b){};
-	Toyota(int b): Car(b){};
+	//Toyota(int b): Car(b){};
 };
 
 class Prius: public Toyota {
 public:
 	Prius(double b):Toyota(b) {};
-	Prius(int b):Toyota(b) {};
+	//Prius(int b):Toyota(b) {};
 };
 
 
@@ -64,7 +66,7 @@ int main(int argc, char **argv)
 	//test code 2
 	//Point:  output is "2000" 因为Prius调用了Car的默认构造函数
 	//-----------------------------------
-	Prius p(3000);
+	Prius p(30000);
 	cout <<p.price <<endl;
 
 	return 0;
