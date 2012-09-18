@@ -3,8 +3,6 @@
 
 using namespace std;
 
-int steps = 0;
-
 int calculate_steps(int step_level) {
 
 	if (step_level == 1) {
