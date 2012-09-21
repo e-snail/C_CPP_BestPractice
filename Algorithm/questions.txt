@@ -1,2 +1,8 @@
 01-Steps:
 有一段楼梯有10级台阶，规定每一步只能跨一级或两级，要登上十级台阶共有多少种不同的走法？
+
+02-strings-algorithm 字符串相关
+	01findmaxlengthoftwo  
+		找出两个字符串中的最长相同子串
+		分析：http://volrender.bokee.com/3638500.html
+					
